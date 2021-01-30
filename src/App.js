@@ -3,6 +3,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { Home, About, Contacts } from "./pages";
 import Navigation from "./components/Navigation";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route component={Contacts} path="/contacts" />
         </Switch>
       </BrowserRouter>
+      <Footer />
     </>
   );
 }
