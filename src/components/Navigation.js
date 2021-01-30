@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navbar, Nav, Button, Container } from "react-bootstrap";
+import { Navbar, Nav, Button, Container, Form, Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -49,6 +49,28 @@ function Navigation() {
           </Container>
         </Navbar>
       </Styles>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header>
+          <Modal.Title>Log In</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label>Email</Form.Label>
+              <Form.Control type="email" placeholder="Enter your email" />
+              <Form.Text className="text-muted">Descpriptioned </Form.Text>
+            </Form.Group>
+            <Form.Group controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control type="password" placeholder="Enter your password" />
+              <Form.Text className="text-muted">Descpriptioned </Form.Text>
+            </Form.Group>
+            <Form.Group controlId="formBasicCheckbox">
+              <Form.Control type="checkbox" placeholder="Remember me" />
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+      </Modal>
     </>
   );
 }
