@@ -8,40 +8,37 @@ function About() {
       <h2>About</h2>
       <Jumbo />
       <Container>
-        <h2>Title</h2>
+        <h2>Statistics</h2>
         <Table striped bordered hover>
           <thead>
             <tr>
-              <th colSpan="2">1</th>
-              <th colSpan="2">2</th>
-              <th>3</th>
-              <th>4</th>
+              <th colSpan="2">Life span</th>
+              <th colSpan="1">Personality</th>
+              <th>Health</th>
+              <th>Care</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>1</td>
-              <td>1</td>
-              <td>1</td>
-              <td>1</td>
-              <td>1</td>
-              <td>1</td>
+              <td>British Shorthair</td>
+              <td>14</td>
+              <td>Calm, withdrawn, independant</td>
+              <td>Strong</td>
+              <td>Minimal</td>
             </tr>
             <tr>
-              <td>2</td>
-              <td>2</td>
-              <td>2</td>
-              <td>2</td>
-              <td>2</td>
-              <td>2</td>
+              <td>Maine Coon</td>
+              <td>18</td>
+              <td>Playful, dominant, patient</td>
+              <td>Strong</td>
+              <td>Middle</td>
             </tr>
             <tr>
-              <td>3</td>
-              <td>3</td>
-              <td>3</td>
-              <td>3</td>
-              <td>3</td>
-              <td>3</td>
+              <td>Exotic Shorthair</td>
+              <td>10</td>
+              <td>Cute, smart, playful, friendly</td>
+              <td>Decent</td>
+              <td>Middle</td>
             </tr>
           </tbody>
         </Table>

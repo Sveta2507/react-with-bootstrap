@@ -30,10 +30,10 @@ function Jumbo() {
       <Jumbotron className="jumbo">
         <div className="overlay"></div>
         <Container>
-          <h1>Main title</h1>
-          <p>
-            Lorem ipsum dolar sit amet consectetur adipisicing elit. Maiores,
-            particular
+          <h1>Lovely creatures for everyone specifically!</h1>
+          <p style={{ fontSize: "30px" }}>
+            Cats are what makes each house a cozzy home. The heart is where the
+            cat is.
           </p>
         </Container>
       </Jumbotron>

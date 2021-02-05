@@ -23,4 +23,5 @@
     border-bottom-color: rgba(15, 122, 252, 0.2);
     flex-flow: column;
     text-align: center;
+    text-indent: 1.5em;
 }
