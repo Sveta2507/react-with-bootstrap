@@ -42,7 +42,7 @@ function Contacts() {
           <img src={face} alt="facebook" width="30" className={classes.icon} />
         </li>
         <li>
-          <a href="https://www.linkedin.com/">LinkeDin</a>
+          <a href="https://www.linkedin.com/">LinkedIn</a>
           <img src={link} alt="linkedin" width="30" className={classes.icon} />
         </li>
         <li>
@@ -51,7 +51,12 @@ function Contacts() {
         </li>
         <li>
           <a href="https://t.me/somebody25">Telegram</a>
-          <img src={telega} alt="telegram" width="30" className={classes.icon} />
+          <img
+            src={telega}
+            alt="telegram"
+            width="30"
+            className={classes.icon}
+          />
         </li>
       </ul>
     </>
