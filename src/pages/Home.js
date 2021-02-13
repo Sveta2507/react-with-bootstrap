@@ -7,13 +7,24 @@ import img3 from "../images/box2.jpeg";
 import img4 from "../images/2.jpeg";
 import img5 from "../images/cat5.jpeg";
 import classes from "../components/styles/fonts.css";
+import Toggler from "../components/Toggler";
 
 function Home() {
   return (
     <>
       <h1 className={classes.p}>The Generation of Cats</h1>
       <h2 className={classes.p}>Home</h2>
-      <Slider />
+      <Toggler>
+        {(isOpen, onToggle) => (
+          <>
+            <button type="button" onChange={onToggle} checked={isOpen}>
+              {isOpen ? "hide" : "show"}
+            </button>
+            {isOpen && <Slider />}
+          </>
+        )}
+      </Toggler>
+      {/* <Slider /> */}
       <Container style={{ paddingTop: "2rem", paddingBottom: "2rem" }}>
         <Row>
           <Col>
