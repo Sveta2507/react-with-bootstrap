@@ -11,8 +11,8 @@ import classes from "../components/styles/fonts.css";
 function Home() {
   return (
     <>
-      <h1 className={classes.fonts}>The Generation of Cats</h1>
-      <h2>Home</h2>
+      <h1 className={classes.p}>The Generation of Cats</h1>
+      <h2 className={classes.p}>Home</h2>
       <Slider />
       <Container style={{ paddingTop: "2rem", paddingBottom: "2rem" }}>
         <Row>

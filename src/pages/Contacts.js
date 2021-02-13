@@ -6,9 +6,13 @@ import disc from "../images/icons/discord.svg";
 import telega from "../images/icons/telegram.svg";
 import classes from "./Contacts.module.css";
 
+// import withLog from "../components/hoc/withLog";
+import TestComponent from "../components/TestComponent";
+
 function Contacts() {
   return (
     <>
+      <TestComponent a="name" />
       <h2>Contacts</h2>;
       <address>
         <li>

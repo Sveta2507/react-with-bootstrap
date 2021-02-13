@@ -1,3 +1,4 @@
-fonts {
-    text-shadow: 3px 5px 6px rgb(137, 10, 10);
+.p {
+    text-shadow: 3px 5px 10px rgb(137, 10, 10);
+    text-align: center;
 }
