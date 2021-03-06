@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Navbar, Nav, Button, Container, Form, Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import withAuthContext from "./hoc/withAuthContext";
 
 const Styles = styled.div`
   a,
@@ -14,7 +15,21 @@ const Styles = styled.div`
   }
 `;
 
-function Navigation() {
+const styles = {
+  container: {
+    display: "flex",
+    alignItems: "center",
+  },
+  avatar: {
+    marginRight: 4,
+  },
+  name: {
+    fontWeight: 900,
+    marginRight: 12,
+  },
+};
+
+function Navigation({ auth }) {
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
@@ -38,18 +53,39 @@ function Navigation() {
                 </Nav.Link>
               </Nav>
               <Nav>
-                <Button variant="primary" className="mr-2" onClick={handleShow}>
-                  Log In
-                </Button>
-                <Button variant="primary" onClick={handleShow}>
-                  Sign Out
-                </Button>
+                {auth.user ? (
+                  <div style={styles.container}>
+                    <img
+                      src={auth.user.avatar}
+                      alt={auth.user.name}
+                      width="32"
+                      style={styles.avatar}
+                    />
+                    <span style={styles.name}>Hello, {auth.user.name}</span>
+                    <button type="button" onClick={auth.onLogout}>
+                      Log Out
+                    </button>
+                  </div>
+                ) : (
+                  <>
+                    <Button
+                      variant="primary"
+                      className="mr-2"
+                      onClick={auth.onLogin}
+                    >
+                      Log In
+                    </Button>
+                    <Button variant="primary" onClick={auth.onLogin}>
+                      Sign Out
+                    </Button>
+                  </>
+                )}
               </Nav>
             </Navbar.Collapse>
           </Container>
         </Navbar>
       </Styles>
-      <Modal show={show} onHide={handleClose}>
+      {/* <Modal show={show} onHide={handleClose}>
         <Modal.Header>
           <Modal.Title>Log In</Modal.Title>
         </Modal.Header>
@@ -70,9 +106,9 @@ function Navigation() {
             </Form.Group>
           </Form>
         </Modal.Body>
-      </Modal>
+      </Modal> */}
     </>
   );
 }
 
-export default Navigation;
+export default withAuthContext(Navigation);
