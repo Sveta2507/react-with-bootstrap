@@ -7,7 +7,7 @@ import { v4 as genId } from "uuid";
 class Pexel extends Component {
   state = {
     showModal: false,
-    queryValue: "cats",
+    queryValue: "",
     elem: null,
   };
 
@@ -17,9 +17,15 @@ class Pexel extends Component {
     });
   };
 
-  handleSubmit = () => {};
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.getQuery(this.state.queryValue);
+    this.setState({ queryValue: "" });
+  };
 
-  handleChange = () => {};
+  handleChange = (e) => {
+    this.setState({ queryValue: e.target.value });
+  };
 
   getElem = (elem) => {
     this.toggleModal();
@@ -36,13 +42,14 @@ class Pexel extends Component {
         <section className={s.gallery}>
           <div className="container">
             {showModal && (
-              <Modal toggleModal={toggleModal} source={elem.src.tiny}>
+              <Modal toggleModal={toggleModal}>
                 <p>Everybody</p>
+                <img src={elem.src.tiny} alt="img" />
               </Modal>
             )}
-            <button className="mainBtn" onClick={toggleModal}>
+            {/* <button className="mainBtn" onClick={toggleModal}>
               show modal
-            </button>
+            </button> */}
             <div>
               <Form onSubmit={handleSubmit}>
                 <Form.Group>
@@ -67,8 +74,9 @@ class Pexel extends Component {
                   <div className={s.imgHover}>
                     {/* <a href="#" onClick={toggleModal}> */}
                     <a
-                      href="#"
-                      onClick={() => {
+                      href="/"
+                      onClick={(event) => {
+                        event.preventDefault();
                         getElem(el);
                       }}
                     >

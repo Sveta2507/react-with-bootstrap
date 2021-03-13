@@ -37,12 +37,10 @@ export default class Modal extends Component {
 
   render() {
     const { handleClose } = this;
-    const { children, source } = this.props;
+    const { children } = this.props;
     return createPortal(
       <div className={s.backDrop} onClick={handleClose}>
         <div className={s.content}>
-          <p>Hello World</p>
-          <img src={source} alt="" />
           {children}
         </div>
       </div>,

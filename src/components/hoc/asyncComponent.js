@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 
 const asyncComponent = (loader) => {
-  return class asyncComponent extends Component {
+  return class AsyncComponent extends Component {
     state = {
-      component: "null",
+      component: null,
     };
-
     componentDidMount() {
       loader().then((module) => {
         this.setState({ component: module.default });

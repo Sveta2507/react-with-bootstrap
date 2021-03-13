@@ -1,8 +1,9 @@
-const getImages = () => {
-  return {
-    type: "",
-    payload: null,
-  };
-};
+import { createAction } from "@reduxjs/toolkit";
 
-export { getImages };
+const getQuery = createAction("GET_QUERY", (query) => {
+  return {
+    payload: query,
+  };
+});
+
+export { getQuery };

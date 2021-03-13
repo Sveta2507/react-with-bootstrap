@@ -15,11 +15,21 @@ class About extends Component {
     const { query, page } = this.state;
     api.getFetch(query, page).then((result) => {
       console.log(result);
-      this.setState({ gallery: result });
+      this.setState(() => ({ gallery: [...result] }));
     });
   }
 
-  componentDidUpdate(prevProps, prevState) {}
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.query !== this.state.query) {
+      api.getFetch(this.state.query, this.state.page).then((result) => {
+        this.setState(() => ({ gallery: [...result] }));
+      });
+    }
+  }
+
+  getQuery = (value) => {
+    this.setState({ query: value });
+  };
 
   render() {
     console.log(this.props.auth);
@@ -64,8 +74,8 @@ class About extends Component {
               </tr>
             </tbody>
           </Table>
+          <Pexel gallery={gallery} getQuery={this.getQuery} />
         </Container>
-        <Pexel />
       </>
     );
   }
